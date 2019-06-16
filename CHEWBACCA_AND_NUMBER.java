@@ -39,3 +39,48 @@ public class Main {
 
     }
 }
+
+////////////////////////////              OR        //////////////////////////////////
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        // Your Code Here
+         Scanner scn = new Scanner(System.in);
+
+			long n = scn.nextLong();
+
+			
+			int mul=0;
+			long ans=0;
+			while (n != 0) {
+
+				long rem = n % 10;
+				if(n/10==0&&rem==9)
+				{
+					ans+=rem*(long)Math.pow(10, mul);
+				}
+				else if(rem>=5)
+					{
+						rem=9-rem;
+						ans+=rem*(long)Math.pow(10, mul);	
+					}
+				else
+				{
+					ans+=rem*(long)Math.pow(10, mul);
+				}
+				
+				n = n / 10;
+
+				mul++;
+			}
+
+			
+		
+
+		
+			
+			System.out.println(ans);
+
+    }
+}
+
